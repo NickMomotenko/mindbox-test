@@ -1,10 +1,29 @@
-.todo-list{
-    &__label{
-        display: flex;
-        align-items: center;
+.todo-list {
+  margin-bottom: 15px;
+
+  &__item {
+    background: #faebeb69;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    cursor: pointer;
+
+    &.completed {
+      .todo-list__text {
+        text-decoration: line-through;
+      }
     }
 
-    &__text{
-        margin-left: 5px;
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin-left: 5px;
+  }
 }

@@ -5,9 +5,12 @@ import { TodoList } from "../components/TodoList";
 import { useInput } from "../hooks/useInput";
 import { useTodos } from "../hooks/useTodos";
 
+import "./styles.scss";
+
 export const TodoContainer = () => {
   const { value, setValue } = useInput();
-  const { todos, addTodo, toggleTodo , changeFilter } = useTodos();
+  const { todos, filtered, filter, addTodo, toggleTodo, changeFilter } =
+    useTodos();
 
   const handleAddTodo = () => {
     if (!value.trim()) return;
@@ -23,10 +26,10 @@ export const TodoContainer = () => {
         <Input value={value} onChange={setValue} onKeyDown={handleAddTodo} />
       </div>
       <div className="todo__list">
-        <TodoList data={todos} onCheckboxToggle={toggleTodo} />
+        <TodoList data={filtered} onCheckboxToggle={toggleTodo} />
       </div>
       <div className="todo__filters">
-        <FilterView onFilterChange={changeFilter} />
+        <FilterView filter={filter} onFilterChange={changeFilter} />
       </div>
     </div>
   );
