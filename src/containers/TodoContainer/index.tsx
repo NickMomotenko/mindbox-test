@@ -1,9 +1,9 @@
-import { FilterView } from "../components/FilterView";
-import { Input } from "../components/Input";
-import { TodoList } from "../components/TodoList";
+import { FilterView } from "../../components/FilterView";
+import { Input } from "../../components/Input";
+import { TodoList } from "../../components/TodoList";
 
-import { useInput } from "../hooks/useInput";
-import { useTodos } from "../hooks/useTodos";
+import { useInput } from "../../hooks/useInput";
+import { useTodos } from "../../hooks/useTodos";
 
 import "./styles.scss";
 

@@ -1,7 +1,6 @@
-import { TodoContainer } from "./containers/TodoContainer";
-
-import "./App.css";
 import { Container } from "./components/Container";
+
+import { TodoContainer } from "./containers/TodoContainer";
 
 function App() {
   return (

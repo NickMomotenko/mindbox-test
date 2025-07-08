@@ -1,7 +1,8 @@
 import { Button } from "@vkontakte/vkui";
 
-import "./styles.scss";
 import type { TodoFilterTypes } from "../../helpers/types";
+
+import "./styles.scss";
 
 type FilterViewProps = {
   filter: string;

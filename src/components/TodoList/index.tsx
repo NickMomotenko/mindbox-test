@@ -1,7 +1,8 @@
 import { Checkbox } from "@vkontakte/vkui";
 
-import "./styles.scss";
 import type { Todo } from "../../helpers/types";
+
+import "./styles.scss";
 
 type TodoListProps = {
   data: Todo[] | [];
