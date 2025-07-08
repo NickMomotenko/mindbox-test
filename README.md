@@ -23,4 +23,4 @@ yarn dev
 
 Запуск UI-оболочки Playwright:
 
-npx playwright test --ui```
+npx playwright test --ui
