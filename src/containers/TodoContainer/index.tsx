@@ -12,7 +12,6 @@ export const TodoContainer = () => {
   const {
     filtered,
     filter,
-    setFilter,
     addTodo,
     toggleTodo,
     changeFilter,
@@ -25,7 +24,6 @@ export const TodoContainer = () => {
     addTodo(value);
 
     setValue("");
-    setFilter("all");
   };
 
   return (

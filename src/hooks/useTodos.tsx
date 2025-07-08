@@ -23,6 +23,7 @@ export const useTodos = () => {
       completed: false,
     };
     setTodos([newTodo, ...todos]);
+    setFilter("all");
   };
 
   const toggleTodo = (id: number) => {
@@ -39,6 +40,7 @@ export const useTodos = () => {
 
   const clearCompleted = () => {
     setTodos((prev) => prev.filter((todo) => !todo.completed));
+    setFilter("all");
   };
 
   return {
