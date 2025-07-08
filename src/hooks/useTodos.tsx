@@ -26,7 +26,7 @@ export const useTodos = () => {
   };
 
   const toggleTodo = (id: number) => {
-    setTodos((prev: any) =>
+    setTodos((prev) =>
       prev.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
