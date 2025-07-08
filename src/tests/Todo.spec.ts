@@ -37,7 +37,7 @@ test.describe("Todo App", () => {
 
     // в local storage запись появилась
     expect(
-      todosFromStorage.some((todo: any) => todo.text === inputTestText)
+      todosFromStorage.some((todo: Todo) => todo.text === inputTestText)
     ).toBeTruthy();
 
     // кол-во записей разметки === кол-ву записей в local storage

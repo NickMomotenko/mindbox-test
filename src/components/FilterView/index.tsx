@@ -1,12 +1,13 @@
 import { Button } from "@vkontakte/vkui";
 
 import "./styles.scss";
+import type { TodoFilterTypes } from "../../helpers/types";
 
 type FilterViewProps = {
   filter: string;
   filteredCounter?: string | number;
-  onFilterChange: any;
-  onClearCompleted: any;
+  onFilterChange: (value: TodoFilterTypes) => void;
+  onClearCompleted: () => void;
 };
 
 export const FilterView: React.FC<FilterViewProps> = ({
@@ -17,9 +18,11 @@ export const FilterView: React.FC<FilterViewProps> = ({
 }) => {
   return (
     <div className="filter">
-      <div className="filter__counter" data-testid="filter-counter">{filteredCounter} left</div>
+      <div className="filter__counter" data-testid="filter-counter">
+        {filteredCounter} left
+      </div>
       <div className="filter__buttons">
-        {["all", "active", "completed"].map((label: string , ind) => {
+        {["all", "active", "completed"].map((label: any, ind) => {
           return (
             <div className="filter__button" key={ind}>
               <Button
@@ -35,7 +38,11 @@ export const FilterView: React.FC<FilterViewProps> = ({
         })}
       </div>
       <div className="filter__clear">
-        <Button mode="secondary" onClick={onClearCompleted} data-testid="clear-button">
+        <Button
+          mode="secondary"
+          onClick={onClearCompleted}
+          data-testid="clear-button"
+        >
           Clear completed
         </Button>
       </div>

@@ -1,8 +1,8 @@
 import { Input as InputUI } from "@vkontakte/vkui";
 
 type InputType = {
-  onChange: any;
-  onKeyDown: any;
+  onChange: (value: string) => void;
+  onKeyDown: () => void;
   value: string;
 };
 

@@ -5,7 +5,7 @@ import type { Todo } from "../../helpers/types";
 
 type TodoListProps = {
   data: Todo[] | [];
-  onCheckboxToggle: any;
+  onCheckboxToggle: (id: number) => void;
 };
 
 export const TodoList: React.FC<TodoListProps> = ({
