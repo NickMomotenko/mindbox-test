@@ -17,7 +17,7 @@ export const FilterView: React.FC<FilterViewProps> = ({
 }) => {
   return (
     <div className="filter">
-      <div className="filter__counter">{filteredCounter} left</div>
+      <div className="filter__counter" data-testid="filter-counter">{filteredCounter} left</div>
       <div className="filter__buttons">
         {["all", "active", "completed"].map((label: string , ind) => {
           return (
@@ -26,6 +26,7 @@ export const FilterView: React.FC<FilterViewProps> = ({
                 onClick={() => onFilterChange(label)}
                 activated={filter === label}
                 mode="secondary"
+                data-testid={`button-${label}`}
               >
                 {label}
               </Button>
@@ -34,7 +35,7 @@ export const FilterView: React.FC<FilterViewProps> = ({
         })}
       </div>
       <div className="filter__clear">
-        <Button mode="secondary" onClick={onClearCompleted}>
+        <Button mode="secondary" onClick={onClearCompleted} data-testid="clear-button">
           Clear completed
         </Button>
       </div>

@@ -14,10 +14,10 @@ export const TodoList: React.FC<TodoListProps> = ({
 }) => {
   return (
     <div className="todo-list">
-      <ul className="todo-list__body">
+      <ul className="todo-list__body" data-testid="todo-list">
         {data?.map(({ id, completed, text }) => (
           <li
-            className={`todo-list__item ${completed && "completed"}`}
+            className={`todo-list__item ${completed ? "completed" : ""}`}
             key={id}
           >
             <label className="todo-list__label">

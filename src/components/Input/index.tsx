@@ -12,6 +12,7 @@ export const Input: React.FC<InputType> = ({ value, onChange , onKeyDown }) => {
       <InputUI
         type="text"
         placeholder="Add a new task..."
+        data-testid="new-task-input"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && onKeyDown()}

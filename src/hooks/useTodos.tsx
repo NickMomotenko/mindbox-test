@@ -45,6 +45,7 @@ export const useTodos = () => {
     todos,
     filtered,
     filter,
+    setFilter,
     addTodo,
     toggleTodo,
     changeFilter,
