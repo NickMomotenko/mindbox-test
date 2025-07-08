@@ -1,9 +1,13 @@
 import { useMemo, useState } from "react";
+
 import type { Todo, TodoFilterTypes } from "../helpers/types";
+
+import { useLocalStorage } from "./useLocalStorage";
+
 import { mockedData } from "../helpers/mockedData";
 
 export const useTodos = () => {
-  const [todos, setTodos] = useState<Todo[]>(mockedData);
+  const [todos, setTodos] = useLocalStorage<Todo[]>("todos", mockedData);
   const [filter, setFilter] = useState<TodoFilterTypes>("all");
 
   const filtered = useMemo(() => {
@@ -22,7 +26,7 @@ export const useTodos = () => {
   };
 
   const toggleTodo = (id: number) => {
-    setTodos((prev) =>
+    setTodos((prev: any) =>
       prev.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
@@ -33,5 +37,17 @@ export const useTodos = () => {
     setFilter(value);
   };
 
-  return { todos, filtered, filter, addTodo, toggleTodo, changeFilter };
+  const clearCompleted = () => {
+    setTodos((prev) => prev.filter((todo) => !todo.completed));
+  };
+
+  return {
+    todos,
+    filtered,
+    filter,
+    addTodo,
+    toggleTodo,
+    changeFilter,
+    clearCompleted,
+  };
 };

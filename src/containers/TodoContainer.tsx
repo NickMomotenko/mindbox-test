@@ -9,8 +9,7 @@ import "./styles.scss";
 
 export const TodoContainer = () => {
   const { value, setValue } = useInput();
-  const { todos, filtered, filter, addTodo, toggleTodo, changeFilter } =
-    useTodos();
+  const { filtered, filter, addTodo, toggleTodo, changeFilter , clearCompleted } = useTodos();
 
   const handleAddTodo = () => {
     if (!value.trim()) return;
@@ -29,7 +28,12 @@ export const TodoContainer = () => {
         <TodoList data={filtered} onCheckboxToggle={toggleTodo} />
       </div>
       <div className="todo__filters">
-        <FilterView filter={filter} onFilterChange={changeFilter} />
+        <FilterView
+          filteredCounter={filtered.length}
+          filter={filter}
+          onFilterChange={changeFilter}
+          onClearCompleted={clearCompleted}
+        />
       </div>
     </div>
   );
